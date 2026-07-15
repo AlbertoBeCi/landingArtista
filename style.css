@@ -1,0 +1,16 @@
+:root {
+  --color-fondo: #F5EFE6;
+  --color-principal: #8B5E3C;
+  --color-acento: #D9A441;
+  --color-texto: #2E2018;
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+}
