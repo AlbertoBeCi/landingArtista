@@ -7,10 +7,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marcelo",
+    "jobTitle": "Guitarrista y vocalista",
+    "description": "Músico folk especializado en guitarra y voz, con presentaciones en eventos y festivales.",
+    "image": "/heroSection.png",
+    "url": "#bienvenida"
+  }
+  </script>
 </head>
 <body>
 
+  <!-- Navegación con enlaces a cada sección -->
   <header class="header">
     <nav class="nav" aria-label="Navegación principal">
       <a class="nav__logo" href="#bienvenida">Marcelo</a>
@@ -23,29 +36,88 @@
   </header>
 
   <main class="main">
+    <!-- Hero: primera pantalla, con imagen de fondo al 50% de opacidad -->
     <section id="bienvenida" class="section section--bienvenida" aria-labelledby="bienvenida-titulo">
       <h1 id="bienvenida-titulo" class="hero__title">Marcelo</h1>
       <p class="hero__subtitle">Guitarrista y vocalista folk. Música que cuenta historias, en vivo.</p>
       <a class="hero__button" href="#sobre-mi">Conocerme mejor</a>
     </section>
 
+    <!-- Sobre mí: bio + tarjetas con datos rápidos -->
     <section id="sobre-mi" class="section section--sobre-mi" aria-labelledby="sobre-mi-titulo">
       <h2 id="sobre-mi-titulo" class="section__title">Sobre mí</h2>
       <p class="section__text">Me llamo Marcelo y soy un músico apasionado por el folk. Tengo años de experiencia tocando la guitarra y cantando.</p>
+      <ul class="tarjetas">
+        <li class="tarjeta">
+          <h3 class="tarjeta__titulo">Años de experiencia</h3>
+          <p class="tarjeta__texto">18 años siendo guitarrista de profesión</p>
+        </li>
+        <li class="tarjeta">
+          <h3 class="tarjeta__titulo">Instrumentos que toca</h3>
+          <p class="tarjeta__texto">Guitarra</p>
+        </li>
+        <li class="tarjeta">
+          <h3 class="tarjeta__titulo">Género/estilo</h3>
+          <p class="tarjeta__texto">Folk</p>
+        </li>
+        <li class="tarjeta">
+          <h3 class="tarjeta__titulo">Formación/estudios musicales</h3>
+          <p class="tarjeta__texto">Autodidacta, con formación en Escuela de Música Creativa</p>
+        </li>
+      </ul>
     </section>
 
+    <!-- Trayectoria: festivales en los que se ha presentado -->
     <section id="trayectoria" class="section section--trayectoria" aria-labelledby="trayectoria-titulo">
       <h2 id="trayectoria-titulo" class="section__title">Trayectoria</h2>
       <p class="section__text">He trabajado en diversos proyectos musicales y he presentado mi música en varios eventos y festivales.</p>
+      <ul class="tarjetas">
+        <li class="tarjeta">
+          <h3 class="tarjeta__titulo">Festival Xàbia Folk</h3>
+          <p class="tarjeta__texto">La Marina Alta</p>
+        </li>
+        <li class="tarjeta">
+          <h3 class="tarjeta__titulo">Folk Segovia</h3>
+          <p class="tarjeta__texto">Segovia</p>
+        </li>
+        <li class="tarjeta">
+          <h3 class="tarjeta__titulo">Poborina Folk</h3>
+          <p class="tarjeta__texto">Teruel</p>
+        </li>
+      </ul>
     </section>
 
+    <!-- Próximas presentaciones + reproductor de audio de muestra -->
     <section id="presentaciones" class="section section--presentaciones" aria-labelledby="presentaciones-titulo">
       <h2 id="presentaciones-titulo" class="section__title">Próximas presentaciones</h2>
       <p class="section__text">Próximamente estaré presentando mi música en varios eventos y festivales. ¡No te lo pierdas!</p>
+      <aside class="escucha" aria-labelledby="escucha-titulo">
+        <h3 id="escucha-titulo" class="escucha__titulo">Escucha algo mío</h3>
+        <audio class="escucha__audio" controls src="/demo.mp3">
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+      </aside>
     </section>
   </main>
 
   <footer class="footer">
+    <ul class="redes" aria-label="Redes sociales">
+      <li>
+        <a class="redes__link" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li>
+        <a class="redes__link" href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li>
+        <a class="redes__link" href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+        </a>
+      </li>
+    </ul>
     <p class="footer__text">© 2023 Marcelo. Todos los derechos reservados.</p>
   </footer>
 

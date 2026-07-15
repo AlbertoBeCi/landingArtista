@@ -1,3 +1,4 @@
+/* Paleta de colores y fuentes del sitio */
 :root {
   --color-fondo: #F5EFE6;
   --color-principal: #8B5E3C;
@@ -16,22 +17,47 @@ body {
   line-height: 1.6;
 }
 
+/* Declaraciones agrupadas para evitar repetir el mismo valor en varios selectores */
+.nav__logo,
+.nav__link,
+.hero__button {
+  text-decoration: none;
+}
+
+.nav__logo,
+.section__title,
+.hero__title {
+  font-family: var(--fuente-titulos);
+}
+
+.nav__link,
+.footer__text,
+.hero__button,
+.tarjeta {
+  color: var(--color-texto-claro);
+}
+
+.nav,
+.hero__button,
+.footer,
+.tarjeta {
+  background-color: var(--color-principal);
+}
+
+/* Barra de navegación */
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 14px;
   padding: 0.75rem;
-  background-color: var(--color-principal);
   border-radius: 0.5rem;
 }
 
 .nav__logo {
   color: var(--color-acento);
-  font-family: var(--fuente-titulos);
   font-size: 1.5rem;
   font-weight: 700;
-  text-decoration: none;
 }
 
 .nav__list {
@@ -41,30 +67,102 @@ body {
 }
 
 .nav__link {
-  color: var(--color-texto-claro);
   font-weight: 600;
-  text-decoration: none;
 }
 
 .nav__link:hover {
   color: var(--color-acento);
 }
 
+/* Cada section ocupa el alto completo de la pantalla, separadas por una línea (menos la última) */
 .section {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 2rem;
+  border-bottom: 1px solid var(--color-principal);
 }
 
-.section__title {
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.section__title,
+.hero__title {
   color: var(--color-principal);
-  font-family: var(--fuente-titulos);
-  font-size: 2.25rem;
   margin-bottom: 1rem;
 }
 
+.section__title {
+  font-size: 2.25rem;
+}
+
+/* Tarjetas en grid (1 columna en móvil, se reparten en varias desde 768px) */
+.tarjetas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 60rem;
+  margin-top: 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .tarjetas {
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  }
+}
+
+/* Mismo estilo y hover que .hero__button */
+.tarjeta {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.tarjeta:hover {
+  background-color: var(--color-acento);
+}
+
+.tarjeta__titulo {
+  font-family: var(--fuente-titulos);
+  margin-bottom: 0.5rem;
+}
+
+/* Reproductor de audio dentro de "Próximas presentaciones" */
+.escucha {
+  max-width: 30rem;
+  margin: 2rem auto 0;
+  padding: 1.5rem 2rem;
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-principal);
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.escucha__titulo {
+  color: var(--color-principal);
+  font-family: var(--fuente-titulos);
+  margin-bottom: 1rem;
+}
+
+.escucha__audio {
+  width: 100%;
+}
+
+/* Centra el contenido de estas secciones (el hero se centra aparte, más abajo) */
+.section--sobre-mi,
+.section--trayectoria,
+.section--presentaciones {
+  align-items: center;
+  text-align: center;
+}
+
+/* Hero: imagen de fondo aplicada en el ::before para no afectar la opacidad del texto */
 .section--bienvenida {
   position: relative;
   align-items: center;
@@ -84,11 +182,8 @@ body {
 }
 
 .hero__title {
-  color: var(--color-principal);
-  font-family: var(--fuente-titulos);
   font-size: clamp(3rem, 10vw, 6rem);
   line-height: 1.1;
-  margin-bottom: 1rem;
 }
 
 .hero__subtitle {
@@ -101,10 +196,7 @@ body {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.75rem 1.75rem;
-  background-color: var(--color-principal);
-  color: var(--color-texto-claro);
   font-weight: 600;
-  text-decoration: none;
   border-radius: 0.5rem;
   transition: background-color 0.2s ease;
 }
@@ -118,13 +210,32 @@ body {
   font-size: 1.125rem;
 }
 
+/* Pie de página */
 .footer {
-  background-color: var(--color-principal);
   padding: 1rem;
   text-align: center;
 }
 
-.footer__text {
+/* Iconos de redes sociales */
+.redes {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0.75rem;
+}
+
+.redes__link {
   color: var(--color-texto-claro);
+  font-size: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.redes__link:hover {
+  color: var(--color-acento);
+}
+
+.footer__text {
   font-size: 0.875rem;
 }
