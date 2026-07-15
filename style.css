@@ -3,11 +3,17 @@
   --color-principal: #8B5E3C;
   --color-acento: #D9A441;
   --color-texto: #2E2018;
+  --color-texto-claro: #FAF6F0;
+
+  --fuente-titulos: "Playfair Display", serif;
+  --fuente-texto: "Nunito Sans", sans-serif;
 }
 
 body {
   background-color: var(--color-fondo);
   color: var(--color-texto);
+  font-family: var(--fuente-texto);
+  line-height: 1.6;
 }
 
 .nav {
@@ -17,23 +23,79 @@ body {
   gap: 14px;
   padding: 0.75rem;
   background-color: var(--color-principal);
+  border-radius: 0.5rem;
 }
 
 .nav__logo {
   color: var(--color-acento);
+  font-family: var(--fuente-titulos);
+  font-size: 1.5rem;
+  font-weight: 700;
   text-decoration: none;
 }
 
 .nav__list {
   display: flex;
   list-style: none;
+  gap: 1.5rem;
 }
 
 .nav__link {
-  color: var(--color-fondo);
+  color: var(--color-texto-claro);
+  font-weight: 600;
   text-decoration: none;
 }
 
 .nav__link:hover {
   color: var(--color-acento);
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.section__title {
+  color: var(--color-principal);
+  font-family: var(--fuente-titulos);
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+.section--bienvenida {
+  align-items: center;
+  text-align: center;
+}
+
+.hero__title {
+  color: var(--color-principal);
+  font-family: var(--fuente-titulos);
+  font-size: clamp(3rem, 10vw, 6rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.hero__subtitle {
+  max-width: 40ch;
+  color: var(--color-texto);
+  font-size: 1.25rem;
+}
+
+.section__text {
+  max-width: 60ch;
+  font-size: 1.125rem;
+}
+
+.footer {
+  background-color: var(--color-principal);
+  padding: 1rem;
+  text-align: center;
+}
+
+.footer__text {
+  color: var(--color-texto-claro);
+  font-size: 0.875rem;
 }
